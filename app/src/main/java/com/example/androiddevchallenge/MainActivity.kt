@@ -15,14 +15,16 @@
  */
 package com.example.androiddevchallenge
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.platform.LocalContext
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigate
+import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -39,23 +41,33 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
-    Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
-    }
-}
 
-@Preview("Light Theme", widthDp = 360, heightDp = 640)
-@Composable
-fun LightPreview() {
-    MyTheme {
-        MyApp()
-    }
-}
+    val navController = rememberNavController()
+    val context = LocalContext.current
 
-@Preview("Dark Theme", widthDp = 360, heightDp = 640)
-@Composable
-fun DarkPreview() {
-    MyTheme(darkTheme = true) {
-        MyApp()
-    }
+    NavHost(
+        navController = navController,
+        startDestination = "home",
+        builder = {
+            composable(
+                route = Screens.homeScreen.route
+            ) {
+                HomePage(
+                    onNavigate = {
+                        navController.navigate(it)
+                    }
+                )
+            }
+
+            composable(
+                route = Screens.loginScreen.route
+            ) {
+                LoginPage(
+                    onLogin = {
+                        context.startActivity(Intent(context, NavHostActivity::class.java))
+                    }
+                )
+            }
+        }
+    )
 }

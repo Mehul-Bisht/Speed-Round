@@ -10,4 +10,6 @@
       the License.
       -->
     <string name="app_name">AndroidDevChallenge</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_nav_host">NavHostActivity</string>
 </resources>
