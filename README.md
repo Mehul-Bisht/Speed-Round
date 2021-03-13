@@ -16,7 +16,11 @@ I was motivated by the Jetpack Compose Beta announcement by the Android Team, an
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="/results/Screenshot_light_1.png" width="260">&emsp;<img src="/results/Screenshot_light_2.png" width="260">
+## Light Theme
+<img src="/results/Screenshot_light_1.png" width="260">&emsp;<img src="/results/Screenshot_light_2.png" width="260">&emsp;<img src="/results/Screenshot_light_3.png" width="260">&emsp;<img src="/results/Screenshot_light_4.png" width="260">
+
+## Dark Theme
+<img src="/results/Screenshot_dark_1.png" width="260">&emsp;<img src="/results/Screenshot_dark_2.png" width="260">&emsp;<img src="/results/Screenshot_dark_3.png" width="260">&emsp;<img src="/results/Screenshot_dark_4.png" width="260">
 
 ## License
 ```
